@@ -381,9 +381,8 @@
       border-radius: 8px;
       overflow: hidden;
       background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(240, 247, 255, 0.92)),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='560' viewBox='0 0 420 560'%3E%3Crect width='420' height='560' fill='%23eef6ff'/%3E%3Cg transform='translate(222 30) rotate(-11)'%3E%3Cpath fill='%23cfe4ff' stroke='%237aa7e8' stroke-width='3' d='M92 2c33 23 56 52 64 89 6 27-2 52-18 74-15 19-34 33-54 48-19 14-38 29-47 50-11 25-7 56-20 79-16 30-55 40-82 63-31 26-39 63-61 94-20 28-52 44-85 61-23 13-47 26-62 46-16 22-18 50-37 68-21 21-57 18-81-1-21-16-32-42-31-68 1-38 25-71 53-95 31-26 67-44 92-77 26-33 32-78 56-112 20-29 52-48 82-67 27-18 53-37 67-67 13-28 12-61 21-91 12-39 44-68 83-80 20-6 40-7 60-14z'/%3E%3Cpath fill='%23cfe4ff' stroke='%237aa7e8' stroke-width='3' d='M-244 421c27 2 53 14 67 37 11 18 10 42-2 58-17 22-50 26-76 17-26-9-47-31-56-57-8-25-3-53 15-72 13-14 31-21 52-20z'/%3E%3Cpath fill='%23cfe4ff' stroke='%237aa7e8' stroke-width='3' d='M-200 528c19 9 33 25 34 45 2 23-12 45-34 53-23 9-51-1-64-22-13-20-9-49 8-66 15-14 37-18 56-10z'/%3E%3C/g%3E%3C/svg%3E");
-      background-size: cover;
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='560' viewBox='0 0 420 560'%3E%3Crect width='420' height='560' fill='%23eaf4ff'/%3E%3Cg opacity='0.45' stroke='%23bdd4ef' stroke-width='1'%3E%3Cpath d='M0 80h420M0 160h420M0 240h420M0 320h420M0 400h420M0 480h420M70 0v560M140 0v560M210 0v560M280 0v560M350 0v560'/%3E%3C/g%3E%3Cg transform='translate(224 20) rotate(-10)' stroke='%23ffffff' stroke-width='5' stroke-linejoin='round'%3E%3Cpath fill='%2384cc16' d='M126 0c28 17 48 43 53 77 4 26-5 49-23 66-18 17-43 26-65 39-17 10-32 24-39 43-8 24 1 52-8 75-10 25-38 39-61 52-21 12-40 27-51 49-8 16-10 34-15 51-6 17-17 34-34 42-18 9-41 5-56-10-14-14-19-35-15-54 5-25 24-44 44-59 20-15 43-27 58-48 15-21 18-48 31-70 13-23 36-37 58-51 24-15 46-31 57-58 10-24 8-52 15-77 8-31 27-53 51-67z'/%3E%3Cpath fill='%232dd4bf' d='M-76 388c-15 18-19 42-31 62-13 22-38 34-60 47-21 12-41 26-54 46-16 24-16 55-34 78-17 21-48 29-73 19-26-10-43-39-39-67 5-32 34-53 61-68 31-18 65-29 90-56 25-26 35-63 62-87 22-20 54-27 78-12 13 8 14 25 0 38z'/%3E%3Cpath fill='%2360a5fa' d='M-36 496c30 3 61 18 76 44 13 24 10 54-8 74-25 28-71 29-101 9-28-19-42-55-34-88 7-29 31-43 67-39z'/%3E%3Cpath fill='%23f59e0b' d='M-173 520c22 3 43 15 53 35 11 24 1 54-21 68-24 15-59 7-75-16-16-22-11-56 10-73 9-7 20-12 33-14z'/%3E%3Cpath fill='%23f97316' d='M-265 510c24 4 45 23 50 47 6 28-12 58-39 68-29 11-65-3-78-31-13-28-2-64 24-78 13-7 28-9 43-6z'/%3E%3Cpath fill='%23ec4899' d='M-286 678c21 5 37 24 37 46 1 25-19 48-44 51-25 3-51-15-57-40-6-26 11-55 36-61 9-2 18-1 28 4z'/%3E%3C/g%3E%3Cg transform='translate(224 20) rotate(-10)' fill='none' stroke='%231e3a5f' stroke-width='2' opacity='0.22'%3E%3Cpath d='M95 58c22 20 35 47 28 76M25 219c-24 21-53 39-83 57M-92 385c-20 18-37 42-48 70M-187 517c-24 22-46 48-58 78M-265 522c-20 24-29 53-20 82'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 100% 100%;
       background-position: center;
       box-shadow: inset 0 0 0 1px rgba(15, 107, 255, 0.09);
     }
@@ -428,22 +427,35 @@
       position: absolute;
       left: 50%;
       top: 50%;
-      width: 18px;
-      height: 18px;
-      border: 4px solid #fff;
-      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      border: 5px solid #fff;
+      border-radius: 50% 50% 50% 0;
       background: #ef4444;
-      box-shadow: 0 10px 24px rgba(239, 68, 68, 0.34);
-      transform: translate(-50%, -50%);
+      box-shadow: 0 14px 30px rgba(239, 68, 68, 0.42), 0 0 0 8px rgba(239, 68, 68, 0.16);
+      transform: translate(-50%, -78%) rotate(-45deg);
       transition: left 0.28s ease, top 0.28s ease;
     }
 
     .map-marker::after {
       content: "";
       position: absolute;
-      inset: -12px;
-      border: 2px solid rgba(239, 68, 68, 0.28);
+      inset: 5px;
+      border: 0;
       border-radius: 50%;
+      background: #fff;
+    }
+
+    .map-marker::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 58px;
+      height: 58px;
+      border: 2px solid rgba(239, 68, 68, 0.32);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
     }
 
     .map-label {
@@ -451,18 +463,57 @@
       left: calc(50% + 15px);
       top: calc(50% - 33px);
       max-width: 130px;
-      border: 1px solid rgba(15, 107, 255, 0.18);
+      border: 1px solid rgba(15, 107, 255, 0.2);
       border-radius: 8px;
-      padding: 7px 9px;
-      background: rgba(255, 255, 255, 0.92);
+      padding: 8px 10px;
+      background: rgba(255, 255, 255, 0.96);
       color: var(--ink);
-      font-size: 0.78rem;
+      font-size: 0.84rem;
       font-weight: 900;
       line-height: 1.35;
       box-shadow: 0 14px 30px rgba(23, 32, 51, 0.13);
       transform: translate(0, -50%);
       transition: left 0.28s ease, top 0.28s ease;
       overflow-wrap: anywhere;
+    }
+
+    .map-label::before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-right: 6px;
+      border-radius: 50%;
+      background: var(--region-color, var(--accent));
+    }
+
+    .map-legend {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      display: grid;
+      gap: 5px;
+      border: 1px solid rgba(15, 107, 255, 0.14);
+      border-radius: 8px;
+      padding: 8px;
+      background: rgba(255, 255, 255, 0.88);
+      color: #42526a;
+      font-size: 0.68rem;
+      font-weight: 800;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .legend-item::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 3px;
+      background: var(--swatch);
     }
 
     .location-copy {
@@ -676,6 +727,14 @@
               <span id="mapMarker" class="map-marker"></span>
               <span id="mapLabel" class="map-label">位置</span>
               <span class="map-scale">目安</span>
+              <div class="map-legend" aria-hidden="true">
+                <span class="legend-item" style="--swatch:#84cc16">北日本</span>
+                <span class="legend-item" style="--swatch:#2dd4bf">本州</span>
+                <span class="legend-item" style="--swatch:#60a5fa">近畿・中国</span>
+                <span class="legend-item" style="--swatch:#f59e0b">四国</span>
+                <span class="legend-item" style="--swatch:#f97316">九州</span>
+                <span class="legend-item" style="--swatch:#ec4899">沖縄</span>
+              </div>
             </div>
             <div class="location-copy">
               <span>日本地図上の目安</span>
@@ -766,6 +825,20 @@
       "沖縄県": { x: 6, y: 95, region: "南西諸島" }
     };
 
+    const REGION_COLORS = [
+      { test: /北海道|東北/, color: "#84cc16" },
+      { test: /関東|中部|北陸|東海/, color: "#2dd4bf" },
+      { test: /近畿|中国/, color: "#60a5fa" },
+      { test: /四国/, color: "#f59e0b" },
+      { test: /九州/, color: "#f97316" },
+      { test: /南西諸島/, color: "#ec4899" }
+    ];
+
+    const getRegionColor = (region) => {
+      const match = REGION_COLORS.find((item) => item.test.test(region));
+      return match ? match.color : "#0f6bff";
+    };
+
     const normalizeZipcode = (value) => value.replace(/[^\d]/g, "");
 
     const setStatus = (message, type = "") => {
@@ -840,6 +913,7 @@
         mapLabel.style.left = `min(${point.x + 4}%, 78%)`;
         mapLabel.style.top = `${point.y}%`;
         mapLabel.textContent = address.address1;
+        mapLabel.style.setProperty("--region-color", getRegionColor(point.region));
         locationTitle.textContent = `${address.address1}は${point.region}です`;
         locationText.textContent = `${address.address2}${address.address3}は、地図上では${address.address1}付近のマーカーで示しています。町域単位の正確な緯度経度ではなく、都道府県のおおよその位置です。`;
         regionMetric.textContent = point.region;
