@@ -7,16 +7,18 @@
   <style>
     :root {
       color-scheme: light;
-      --ink: #14213d;
+      --ink: #172033;
       --muted: #667085;
-      --line: #d9e2ec;
+      --subtle: #8a96a8;
+      --line: #d8e0ea;
       --panel: #ffffff;
-      --panel-soft: #f7fafc;
-      --accent: #0077b6;
-      --accent-dark: #005f8f;
+      --panel-soft: #f6f8fb;
+      --accent: #0f6bff;
+      --accent-dark: #074fc2;
+      --accent-soft: #e8f1ff;
       --ok: #0f766e;
       --warn: #b42318;
-      --shadow: 0 24px 70px rgba(20, 33, 61, 0.16);
+      --shadow: 0 28px 80px rgba(23, 32, 51, 0.17);
     }
 
     * {
@@ -28,100 +30,214 @@
       min-height: 100vh;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(238, 246, 250, 0.9)),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='1100' viewBox='0 0 1600 1100'%3E%3Crect width='1600' height='1100' fill='%23e9f3f7'/%3E%3Cg fill='none' stroke='%23b8ccd6' stroke-width='2' opacity='0.58'%3E%3Cpath d='M-40 220 C180 135 298 265 488 176 C684 84 838 214 1008 132 C1194 43 1360 138 1640 58'/%3E%3Cpath d='M-40 504 C192 390 337 545 534 444 C720 348 872 488 1064 394 C1232 312 1392 405 1640 326'/%3E%3Cpath d='M-40 788 C150 678 346 810 540 722 C726 637 872 758 1066 680 C1235 612 1390 700 1640 624'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='0.62'%3E%3Crect x='184' y='170' width='184' height='110' rx='8'/%3E%3Crect x='1165' y='210' width='230' height='128' rx='8'/%3E%3Crect x='876' y='690' width='250' height='150' rx='8'/%3E%3C/g%3E%3Cg fill='%230077b6' opacity='0.1'%3E%3Crect x='216' y='203' width='118' height='12' rx='6'/%3E%3Crect x='216' y='229' width='86' height='12' rx='6'/%3E%3Crect x='1204' y='250' width='126' height='12' rx='6'/%3E%3Crect x='1204' y='277' width='156' height='12' rx='6'/%3E%3Crect x='918' y='734' width='144' height='12' rx='6'/%3E%3Crect x='918' y='762' width='96' height='12' rx='6'/%3E%3C/g%3E%3C/svg%3E");
+        linear-gradient(135deg, rgba(247, 250, 252, 0.96), rgba(230, 239, 250, 0.9)),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='1100' viewBox='0 0 1600 1100'%3E%3Crect width='1600' height='1100' fill='%23f4f8fb'/%3E%3Cg opacity='0.72'%3E%3Cpath fill='%23dbeafe' d='M0 0h1600v252c-178 57-322 22-478 74-188 63-318 198-573 131-246-65-333 8-549 89z'/%3E%3Cpath fill='%23eff6ff' d='M0 720c160-54 316-66 468-35 168 35 278 132 472 84 194-47 347-164 660-94v425H0z'/%3E%3C/g%3E%3Cg fill='none' stroke='%2396abc2' stroke-width='2' opacity='0.28'%3E%3Cpath d='M80 224h380v238H80zM164 224v238M252 224v238M340 224v238M80 304h380M80 382h380'/%3E%3Cpath d='M1104 140h316v206h-316zM1182 140v206M1262 140v206M1342 140v206M1104 208h316M1104 276h316'/%3E%3Cpath d='M918 694h388v250H918zM1015 694v250M1112 694v250M1209 694v250M918 777h388M918 860h388'/%3E%3C/g%3E%3Cg fill='%230f6bff' opacity='0.14'%3E%3Ccircle cx='460' cy='224' r='7'/%3E%3Ccircle cx='1104' cy='346' r='7'/%3E%3Ccircle cx='918' cy='944' r='7'/%3E%3C/g%3E%3C/svg%3E");
       background-size: cover;
       background-position: center;
       color: var(--ink);
     }
 
     .shell {
-      width: min(100%, 980px);
+      width: min(100%, 1040px);
       margin: 0 auto;
-      padding: 48px 20px;
+      padding: 28px 20px 56px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 54px;
+      color: #304052;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      font-weight: 900;
+    }
+
+    .brand-mark {
+      display: inline-grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 8px;
+      background: var(--ink);
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .api-pill {
+      border: 1px solid rgba(15, 107, 255, 0.22);
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--accent-dark);
+      font-size: 0.82rem;
+      font-weight: 800;
     }
 
     .top {
       display: grid;
-      gap: 18px;
-      margin-bottom: 26px;
+      grid-template-columns: minmax(0, 0.94fr) minmax(360px, 1.06fr);
+      gap: 34px;
+      align-items: end;
+      margin-bottom: 22px;
     }
 
     .eyebrow {
       margin: 0;
-      color: var(--accent-dark);
-      font-size: 0.84rem;
+      color: var(--accent);
+      font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0;
     }
 
     h1 {
-      margin: 0;
-      font-size: clamp(2.4rem, 8vw, 5.1rem);
+      margin: 10px 0 0;
+      font-size: clamp(2.6rem, 7vw, 5.6rem);
       line-height: 1.02;
       letter-spacing: 0;
     }
 
     .lead {
       max-width: 680px;
-      margin: 0;
+      margin: 18px 0 0;
       color: #3b4a5c;
       font-size: 1.05rem;
       line-height: 1.8;
     }
 
+    .quick-facts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .fact {
+      border-left: 3px solid var(--accent);
+      padding: 8px 10px;
+      background: rgba(255, 255, 255, 0.54);
+    }
+
+    .fact strong,
+    .fact span {
+      display: block;
+    }
+
+    .fact strong {
+      font-size: 1rem;
+    }
+
+    .fact span {
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
     .app {
       display: grid;
-      gap: 18px;
-      padding: 22px;
-      border: 1px solid rgba(255, 255, 255, 0.66);
+      gap: 20px;
+      padding: 26px;
+      border: 1px solid rgba(255, 255, 255, 0.78);
       border-radius: 8px;
-      background: rgba(255, 255, 255, 0.86);
+      background: rgba(255, 255, 255, 0.92);
       box-shadow: var(--shadow);
       backdrop-filter: blur(16px);
+    }
+
+    .app-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .app-title {
+      margin: 0;
+      font-size: 1.18rem;
+      line-height: 1.35;
+    }
+
+    .app-note {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    .status-dot {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      flex: 0 0 auto;
+      border-radius: 999px;
+      padding: 8px 10px;
+      background: #ecfdf3;
+      color: #067647;
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+
+    .status-dot::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: currentColor;
     }
 
     form {
       display: grid;
       grid-template-columns: 1fr auto;
-      gap: 12px;
+      gap: 10px;
       align-items: end;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 8px;
+      background: #fff;
     }
 
     label {
       display: grid;
-      gap: 8px;
+      gap: 6px;
       color: var(--muted);
-      font-size: 0.9rem;
-      font-weight: 700;
+      font-size: 0.78rem;
+      font-weight: 900;
+      padding-left: 10px;
     }
 
     input {
       width: 100%;
-      min-height: 58px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 0 18px;
-      background: #fff;
+      min-height: 54px;
+      border: 0;
+      border-radius: 6px;
+      padding: 0;
+      background: transparent;
       color: var(--ink);
-      font-size: 1.45rem;
-      font-weight: 800;
+      font-size: clamp(1.55rem, 5vw, 2rem);
+      font-weight: 900;
       letter-spacing: 0;
       outline: none;
-      transition: border-color 0.18s ease, box-shadow 0.18s ease;
     }
 
-    input:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 4px rgba(0, 119, 182, 0.16);
+    form:focus-within {
+      border-color: rgba(15, 107, 255, 0.72);
+      box-shadow: 0 0 0 4px rgba(15, 107, 255, 0.14);
     }
 
     button {
-      min-height: 58px;
+      min-height: 64px;
       border: 0;
-      border-radius: 8px;
-      padding: 0 24px;
-      background: var(--accent);
+      border-radius: 6px;
+      padding: 0 28px;
+      background: linear-gradient(180deg, var(--accent), var(--accent-dark));
       color: #fff;
       font-size: 1rem;
       font-weight: 800;
@@ -143,7 +259,8 @@
     .status {
       min-height: 24px;
       color: var(--muted);
-      font-weight: 700;
+      font-size: 0.92rem;
+      font-weight: 800;
       line-height: 1.6;
     }
 
@@ -158,9 +275,9 @@
     .result {
       display: none;
       grid-template-columns: 0.82fr 1.18fr;
-      gap: 14px;
+      gap: 12px;
       border-top: 1px solid var(--line);
-      padding-top: 18px;
+      padding-top: 20px;
     }
 
     .result.visible {
@@ -169,16 +286,16 @@
 
     .block {
       min-width: 0;
-      padding: 18px;
+      padding: 20px;
       border: 1px solid var(--line);
       border-radius: 8px;
-      background: var(--panel-soft);
+      background: linear-gradient(180deg, #ffffff, var(--panel-soft));
     }
 
     .block span {
       display: block;
       margin-bottom: 8px;
-      color: var(--muted);
+      color: var(--subtle);
       font-size: 0.78rem;
       font-weight: 800;
     }
@@ -194,7 +311,7 @@
 
     .address {
       margin: 0;
-      font-size: clamp(2rem, 6.6vw, 4.2rem);
+      font-size: clamp(1.9rem, 6.4vw, 4.1rem);
       font-weight: 900;
       line-height: 1.12;
       letter-spacing: 0;
@@ -218,18 +335,51 @@
       font-weight: 800;
     }
 
+    .footer-note {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.7;
+      text-align: right;
+    }
+
     @media (max-width: 720px) {
       .shell {
-        padding: 32px 14px;
+        padding: 20px 14px 34px;
+      }
+
+      .nav {
+        margin-bottom: 34px;
+      }
+
+      .api-pill {
+        display: none;
+      }
+
+      .top {
+        grid-template-columns: 1fr;
+        gap: 24px;
       }
 
       .app {
         padding: 16px;
       }
 
+      .app-header {
+        display: grid;
+      }
+
       form,
       .result {
         grid-template-columns: 1fr;
+      }
+
+      form {
+        padding: 10px;
+      }
+
+      label {
+        padding-left: 2px;
       }
 
       button {
@@ -239,52 +389,94 @@
       .lead {
         font-size: 0.98rem;
       }
+
+      .quick-facts {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-note {
+        text-align: left;
+      }
     }
   </style>
 </head>
 <body>
   <main class="shell">
+    <nav class="nav" aria-label="サービス情報">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">〒</span>
+        <span>Postal Lookup</span>
+      </div>
+      <span class="api-pill">Powered by ZipCloud API</span>
+    </nav>
+
     <section class="top" aria-labelledby="page-title">
-      <p class="eyebrow">ZIPCODE ADDRESS LOOKUP</p>
-      <h1 id="page-title">郵便番号検索</h1>
-      <p class="lead">7桁の郵便番号から、都道府県・市区町村・町域をすぐに表示します。</p>
-    </section>
-
-    <section class="app" aria-label="郵便番号検索フォーム">
-      <form id="searchForm">
-        <label>
-          郵便番号
-          <input
-            id="zipcode"
-            name="zipcode"
-            type="text"
-            inputmode="numeric"
-            autocomplete="postal-code"
-            placeholder="760-0001"
-            maxlength="8"
-            aria-describedby="status"
-          >
-        </label>
-        <button id="submitButton" type="submit">検索</button>
-      </form>
-
-      <div id="status" class="status" role="status" aria-live="polite"></div>
-
-      <div id="result" class="result" aria-live="polite">
-        <div class="block">
-          <span>都道府県</span>
-          <p id="prefecture" class="prefecture"></p>
-        </div>
-        <div class="block">
-          <span>市区町村・町域</span>
-          <p id="address" class="address"></p>
-          <div class="meta">
-            <span id="city" class="chip"></span>
-            <span id="town" class="chip"></span>
+      <div>
+        <p class="eyebrow">ZIPCODE ADDRESS LOOKUP</p>
+        <h1 id="page-title">郵便番号検索</h1>
+        <p class="lead">7桁の郵便番号から、都道府県・市区町村・町域をすばやく検索。ハイフンあり／なしの入力に対応しています。</p>
+        <div class="quick-facts" aria-label="機能">
+          <div class="fact">
+            <strong>7桁対応</strong>
+            <span>日本の郵便番号</span>
+          </div>
+          <div class="fact">
+            <strong>即時整形</strong>
+            <span>ハイフン自動入力</span>
+          </div>
+          <div class="fact">
+            <strong>無料API</strong>
+            <span>APIキー不要</span>
           </div>
         </div>
       </div>
+
+      <section class="app" aria-label="郵便番号検索フォーム">
+        <div class="app-header">
+          <div>
+            <h2 class="app-title">住所を検索</h2>
+            <p class="app-note">例: 760-0001 または 7600001</p>
+          </div>
+          <span class="status-dot">オンライン</span>
+        </div>
+
+        <form id="searchForm">
+          <label>
+            郵便番号
+            <input
+              id="zipcode"
+              name="zipcode"
+              type="text"
+              inputmode="numeric"
+              autocomplete="postal-code"
+              placeholder="760-0001"
+              maxlength="8"
+              aria-describedby="status"
+            >
+          </label>
+          <button id="submitButton" type="submit">検索</button>
+        </form>
+
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+
+        <div id="result" class="result" aria-live="polite">
+          <div class="block">
+            <span>都道府県</span>
+            <p id="prefecture" class="prefecture"></p>
+          </div>
+          <div class="block">
+            <span>市区町村・町域</span>
+            <p id="address" class="address"></p>
+            <div class="meta">
+              <span id="city" class="chip"></span>
+              <span id="town" class="chip"></span>
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
+
+    <p class="footer-note">検索結果はZipCloudの郵便番号データに基づきます。</p>
   </main>
 
   <script>
